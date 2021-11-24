@@ -1,0 +1,75 @@
+﻿@model ContactUs
+@{
+    ViewData["Title"] = "Contact";
+}
+
+
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="info-box">
+                            <i class="bx bx-map"></i>
+                            <h3>Our Address</h3>
+                            <p>6 Abd Elghany Street, Ain Shams, Cairi</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box mt-4">
+                            <i class="bx bx-envelope"></i>
+                            <h3>Email Us</h3>
+                            <p>mohamedmatroud22@gmail.com<br>contact@example.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box mt-4">
+                            <i class="bx bx-phone-call"></i>
+                            <h3>Call Us</h3>
+                            <p>+20 1550 250 899<br>+20 1150 966 498</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+                <form asp-action="SaveContact"  >
+                    <div class="row">
+                        <div class="col form-group mt-3">
+                            <input type="text" asp-for="Name" class="form-control"  placeholder="Your Name" required>
+                        </div>
+                        <div class="col form-group mt-3">
+                            <input type="email" class="form-control" asp-for="Email"  placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" asp-for="Subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" asp-for="Message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    
+                    <div class="mt-5"><button type="submit" class="btn btn-primary">Send Message</button></div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Contact Section -->

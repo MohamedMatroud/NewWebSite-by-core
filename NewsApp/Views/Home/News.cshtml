@@ -1,0 +1,38 @@
+﻿@model List<News>
+@{
+    ViewData["Title"] = "News";
+}
+
+
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          
+            
+                <h2>@ViewBag.cat News</h2>
+            
+        </div>
+
+        <div class="row ">
+            @foreach (var item in Model)
+            {
+                @*<div class="col-lg-6" data-aos="fade-right">
+
+            </div>*@
+            <div class="col-lg-4 " style="margin-bottom:30px" data-aos="fade-left">
+                <img src="@("~/image/"+item.Image)" asp-append-version="true" class="img-fluid w-100 h-50" alt="">
+                <h3 class="mt-1">@item.Title</h3>
+                <p class="mt-1 text-muted">@item.Date</p>
+                
+                @*<a href="/Home/DeleteNews/@item.Id" class="btn btn-danger">Delete</a>*@
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+            </div>
+               
+            }
+
+
+        </div>
+
+    </div>
+</section><!-- End About Us Section -->

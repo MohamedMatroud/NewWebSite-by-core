@@ -1,0 +1,44 @@
+﻿@model NewsApp.Models.Teammembers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h1>Details</h1>
+
+    <div>
+        <h4 class="text-center mt-2 mb-2"> @Model.Name Details</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.JobTitle)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TeameImage)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@("~/image/"+Model.Image)" asp-append-version="true" width="250px" height="250px" />
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Edit</a> 
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    </div>
+</div>
